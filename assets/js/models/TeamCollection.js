@@ -77,6 +77,7 @@ class TeamCollection extends Backbone.Collection {
   }
 
   url() {
+    console.log(config);
     return 'http://' + config.websockets.host + ':' + config.websockets.port + '/teams';
   }
 }
