@@ -1,0 +1,133 @@
+@import '~bootstrap/less/bootstrap.less';
+
+@body-bg:                #000;
+@text-color:             #FFF;
+@brand-success:          #518851;
+
+@zindex-video-wrapper:  -100;
+@zindex-video:           100;
+@zindex-video-overlay:   200;
+@zindex-button-simulate: 300;
+@zindex-table-overlay:   400;
+@zindex-table:           500;
+
+@navbar-border-radius:   0;
+@table-cell-padding:     3px;
+
+@cl-color:               #3A3939;
+@el-color:               #072903;
+@relegation-color:       #460804;
+
+.container {
+  position: relative;
+}
+
+.navbar {
+  z-index: @zindex-navbar;
+}
+
+.intro-header {
+  text-align: center;
+
+  .btn-simulate {
+    position: absolute;
+    top: 50%;
+    font-size: 1.3em;
+    z-index: @zindex-button-simulate;
+  }
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: @zindex-video-overlay;
+}
+
+.table-responsive {
+  position: relative;
+}
+
+.table-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.1;
+  z-index: @zindex-table-overlay;
+}
+
+.table-league {
+  border-collapse: separate;
+  border-spacing: 0px 5px;
+  position: relative;
+  z-index: @zindex-table;
+  font-size: 0.9em;
+
+  > thead > tr > th {
+    text-align: center;
+  }
+
+  > tbody > tr {
+    background-color: black;
+
+    > td {
+      border: none;
+    }
+  }
+
+  tr.champions_league {
+    background-color: @cl-color;
+
+    td.champions_league {
+      width: 52px;
+
+      span {
+        background-color: #FFF;
+        display: inline-block;
+        padding: 1px;
+        min-width: 50px;
+      }
+    }
+  }
+
+  tr.europa_league {
+    background-color: @el-color;
+
+    td.europa_league span {
+      background-color: #FFF;
+      display: inline-block;
+      padding: 1px;
+      min-width: 50px;
+    }
+  }
+
+  tr.relegation {
+    background-color: @relegation-color;
+  }
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: @zindex-video-wrapper;
+
+  .fullscreen-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: @zindex-video;
+  }
+}

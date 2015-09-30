@@ -1,0 +1,51 @@
+{
+  "name": "fr-realtime-league-table",
+  "version": "1.0.0",
+  "description": "Realtime league table (JS task)",
+  "private": true,
+  "main": "lib/server.js",
+  "scripts": {
+    "start": "./bin/serve",
+    "test": "karma start --single-run=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:footballradar/js-task.git"
+  },
+  "dependencies": {
+    "ws": "^0.5.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "bootstrap": "^3.3.5",
+    "backbone": "^1.2.3",
+    "express": "^4.13.3",
+    "history": "^1.9.1",
+    "jasmine-core": "^2.3.4",
+    "jquery": "^2.1.4",
+    "jsx-loader": "^0.13.2",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "^0.1.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.7.0",
+    "phantomjs": "^1.9.18",
+    "phantomjs-polyfill": "0.0.1",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.25.2",
+    "react-intl": "^2.0.0-pr-1",
+    "react-router": "^1.0.0-rc1",
+    "underscore": "^1.8.3",
+    "css-loader": "^0.19.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "less": "^2.5.2",
+    "less-loader": "^2.2.1",
+    "style-loader": "^0.12.4",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2"
+  }
+}
