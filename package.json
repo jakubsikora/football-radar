@@ -6,8 +6,7 @@
   "main": "lib/server.js",
   "scripts": {
     "start": "./bin/serve",
-    "test": "karma start --single-run=false",
-    "build": "./node_modules/webpack/bin/webpack.js -p"
+    "test": "karma start --single-run=false"
   },
   "repository": {
     "type": "git",

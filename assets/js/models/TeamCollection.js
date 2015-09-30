@@ -2,6 +2,7 @@ import Backbone from 'backbone';
 import TeamModel from './TeamModel';
 import gameCollection from './GameCollection';
 import cc from '../constants';
+import config from '../../../config';
 
 class TeamCollection extends Backbone.Collection {
   constructor(options) {
@@ -76,7 +77,7 @@ class TeamCollection extends Backbone.Collection {
   }
 
   url() {
-    return 'http://localhost:8080/teams';
+    return 'http://' + config.websockets.host + ':' + config.websockets.port + '/teams';
   }
 }
 
