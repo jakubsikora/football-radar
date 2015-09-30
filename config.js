@@ -3,9 +3,9 @@ var config = {};
 config.websockets = {};
 config.server = {};
 
-config.websockets.port = process.env.WS_PORT || 8080;
-config.websockets.host = process.env.WS_HOST || "localhost";
+config.websockets.port = 8080;
+config.websockets.host = 'football-radar.jsikora.io';
 
-config.server.port = process.env.SERVER_PORT || 3000;
+config.server.port = 4000;
 
 module.exports = config;
