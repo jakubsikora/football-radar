@@ -1,6 +1,7 @@
 #!/usr/bin/env node
+var config = require("../config.js");
 
 require("../lib/server").listen(
-    process.env.PORT || 8080,
-    process.env.HOST || "localhost"
+    config.websockets.port,
+    config.websockets.host
 );
