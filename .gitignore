@@ -7,3 +7,6 @@ npm-debug.log
 ._*
 
 dist/*
+
+config.json
+public/config.json

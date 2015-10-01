@@ -1,13 +1,12 @@
 import Backbone from 'backbone';
 import TeamModel from './TeamModel';
 import gameCollection from './GameCollection';
+import configModel from './ConfigModel';
 import cc from '../constants';
-import config from '../../../config';
 
 class TeamCollection extends Backbone.Collection {
   constructor(options) {
     super(options);
-
     this.model = TeamModel;
 
     this.listenTo(gameCollection, "add", this.updateTable);
@@ -77,8 +76,7 @@ class TeamCollection extends Backbone.Collection {
   }
 
   url() {
-    console.log(config);
-    return 'http://' + config.websockets.host + ':' + config.websockets.port + '/teams';
+    return 'http://' + configModel.get('WS_HOST') + ':' + configModel.get('WS_PORT') + '/teams';
   }
 }
 

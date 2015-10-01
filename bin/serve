@@ -1,7 +1,0 @@
-#!/usr/bin/env node
-var config = require("../config.js");
-
-require("../lib/server").listen(
-    config.websockets.port,
-    config.websockets.host
-);

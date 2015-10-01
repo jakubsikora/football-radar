@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { IntlProvider } from 'react-intl';
+import configModel from '../models/ConfigModel.js';
 import App from './App';
 import I18n from './I18n';
 import I18nModel from '../models/I18nModel.js';
@@ -16,7 +17,9 @@ export default class AppIntl extends I18n {
       'ready': false
     };
 
-    this.loadI18n();
+    configModel.fetch().done(() => {
+      this.loadI18n();
+    });
   }
 
   /**

@@ -5,8 +5,11 @@
   "private": true,
   "main": "lib/server.js",
   "scripts": {
-    "start": "./bin/serve",
-    "test": "karma start --single-run=false"
+    "start": "node lib/server.js",
+    "build-config": "node ./lib/config.js",
+    "build-dev": "npm run build-config && webpack -d",
+    "build-production": "npm run build-config && webpack -p",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -46,7 +49,6 @@
     "style-loader": "^0.12.4",
     "underscore": "^1.8.3",
     "url-loader": "^0.5.6",
-    "webpack": "^1.12.2",
-    "webpack-config-loader": "^0.1.0"
+    "webpack": "^1.12.2"
   }
 }
