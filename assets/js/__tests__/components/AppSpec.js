@@ -1,15 +1,16 @@
 'use strict';
 
 import React from 'react/addons';
-import App from '../../components/App';
+import {intlShape, injectIntl} from 'react-intl';
+import AppIntl from '../../components/AppIntl';
 
 const TestUtils = React.addons.TestUtils;
 
-describe('App', () => {
+describe('AppIntl', () => {
   let component;
 
   beforeEach(() => {
-    component = TestUtils.renderIntoDocument(<App />);
+    component = TestUtils.renderIntoDocument(<AppIntl />);
   });
 
   it('should render', () => {

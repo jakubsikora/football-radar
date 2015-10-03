@@ -9,8 +9,8 @@ import _ from 'underscore';
 class I18nModel extends Backbone.Model {
 
   /**
-     * @constructor I18nModel
-     */
+   * @constructor I18nModel
+   */
   constructor(options) {
     super(options);
 
@@ -21,8 +21,8 @@ class I18nModel extends Backbone.Model {
 
   defaults() {
     return {
-      'locale': null,
-      'messages': {}
+      locale: null,
+      messages: {}
     };
   }
 
@@ -32,7 +32,7 @@ class I18nModel extends Backbone.Model {
 
   parse(response) {
     return {
-      'messages': response
+      messages: response
     };
   }
 
@@ -41,14 +41,13 @@ class I18nModel extends Backbone.Model {
    * fetch to update the messages based on the current locale.
    * If intial option is passed we are not going to call the fetch, this
    * will be triggered from its origin place.
-   * // TODO: get messages from cache if exists.
    *
    * @param {Object} model Current model.
    * @param {String} value New locale.
    * @param {Object} options Event options.
    */
   updateLanguage(model, value, options) {
-    if (options['initial']) {
+    if (options.initial) {
       return;
     }
 
@@ -56,7 +55,7 @@ class I18nModel extends Backbone.Model {
     const cache = this.getFromCache(value);
 
     if (cache) {
-      this.set({ 'messages': cache['messages'] });
+      this.set({ messages: cache.messages });
     } else {
       this.fetch().done(() => {
         this.updateCache();
@@ -82,7 +81,7 @@ class I18nModel extends Backbone.Model {
    */
   getFromCache(locale) {
     return this.cache.filter(item => {
-      return item['locale'] === locale;
+      return item.locale === locale;
     })[0];
   }
 }

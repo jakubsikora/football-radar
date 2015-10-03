@@ -2,6 +2,7 @@
 
 import React from 'react';
 import I18nModel from '../models/I18nModel.js';
+import Intl from 'intl';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
 // Messages

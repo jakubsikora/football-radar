@@ -1,4 +1,5 @@
 import React from 'react';
+import Intl from 'intl';
 import {intlShape, injectIntl, defineMessages} from 'react-intl';
 import {Table} from 'react-bootstrap'
 import BackboneComponent from './BackboneComponent';

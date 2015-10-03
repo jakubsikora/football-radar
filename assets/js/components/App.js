@@ -4,6 +4,7 @@ import React from 'react';
 import LanguageChanger from './LanguageChanger';
 import VideoBG from './VideoBG';
 import LeagueTable from './LeagueTable';
+import Intl from 'intl';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import TeamCollection from '../models/TeamCollection';
 

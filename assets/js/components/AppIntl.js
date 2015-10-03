@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Intl from 'intl';
 import { IntlProvider } from 'react-intl';
 import configModel from '../models/ConfigModel.js';
 import App from './App';
