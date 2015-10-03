@@ -2,6 +2,9 @@ import BaseStreamableCollection from './BaseStreamableCollection';
 import GameModel from './GameModel';
 import cc from '../constants';
 
+/**
+ * Game collection.
+ */
 class GameCollection extends BaseStreamableCollection {
   constructor(options) {
     super(options);
@@ -10,4 +13,5 @@ class GameCollection extends BaseStreamableCollection {
   }
 }
 
+// Return instance of game collection (singleton).
 export default new GameCollection();

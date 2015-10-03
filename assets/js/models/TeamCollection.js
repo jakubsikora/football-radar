@@ -4,14 +4,24 @@ import gameCollection from './GameCollection';
 import configModel from './ConfigModel';
 import cc from '../constants';
 
+/**
+ * Team collection.
+ */
 class TeamCollection extends Backbone.Collection {
   constructor(options) {
     super(options);
     this.model = TeamModel;
 
+    // Add event listener for new addition of game models.
     this.listenTo(gameCollection, "add", this.updateTable);
   }
 
+  /**
+   * Custom comparator, sort by points, goals difference, goals For, team name.
+   * @param  {object} a Team model a.
+   * @param  {object} b Team model b.
+   * @return {number}   comporator identifier.
+   */
   comparator(a, b) {
     const points = b.get(cc.PTS) - a.get(cc.PTS);
 
@@ -38,17 +48,27 @@ class TeamCollection extends Backbone.Collection {
     }
   }
 
+  /**
+   * Update table, based on new game model.
+   * @param  {[type]} model [description]
+   * @return {[type]}       [description]
+   */
   updateTable(model) {
     const game = model;
+
+    // Get teams id.
     const homeTeamId = game.get(cc.HOME_TEAM_ID);
     const awayTeamId = game.get(cc.AWAY_TEAM_ID);
 
+    // Get teams model.
     const homeTeam = this.get(homeTeamId);
     const awayTeam = this.get(awayTeamId);
 
+    // Get teams goals.
     const homeGoals = game.get(cc.HOME_GOALS);
     const awayGoals = game.get(cc.AWAY_GOALS);
 
+    // Calculate points based on winner.
     if (homeGoals > awayGoals) {
       homeTeam.increase(cc.WIN);
       awayTeam.increase(cc.LOSE);
@@ -72,6 +92,7 @@ class TeamCollection extends Backbone.Collection {
     awayTeam.increase(cc.GF, awayGoals);
     awayTeam.increase(cc.GA, homeGoals);
 
+    // Sort table.
     this.sort();
   }
 

@@ -1,5 +1,8 @@
 import Backbone from 'backbone';
 
+/**
+ * Config model.
+ */
 class ConfigModel extends Backbone.Model {
   constructor(options) {
     super(options);
@@ -18,4 +21,5 @@ class ConfigModel extends Backbone.Model {
   }
 }
 
+// Return singleton of config model.
 export default new ConfigModel();

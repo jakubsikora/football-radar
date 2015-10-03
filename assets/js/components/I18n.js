@@ -6,9 +6,6 @@ import I18nModel from '../models/I18nModel';
 /**
  * Get backbone model connected with the react component listen
  * for model changes.
- * @constructor
- * @class I18n
- * @extends {React.Component}
  */
 export default class I18n extends React.Component {
   constructor(props, context) {

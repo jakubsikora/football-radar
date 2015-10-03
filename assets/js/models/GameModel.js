@@ -1,5 +1,8 @@
 import Backbone from 'backbone';
 
+/**
+ * Game model.
+ */
 class GameModel extends Backbone.Model {
   constructor(options) {
     super(options);

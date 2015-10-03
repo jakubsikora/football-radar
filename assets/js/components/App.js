@@ -1,21 +1,44 @@
+'use strict';
+
 import React from 'react';
 import LanguageChanger from './LanguageChanger';
 import VideoBG from './VideoBG';
 import LeagueTable from './LeagueTable';
-import { FormattedMessage } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import TeamCollection from '../models/TeamCollection';
 
+// Instantiate teaam collection
 const teams = new TeamCollection();
 
+// Messages
+const messages = defineMessages({
+  premierLeague: {
+    id: 'premier_league',
+    defaultMessage: '{season} English Premier League'
+  },
+  simulate: {
+    id: 'simulate',
+    defaultMessage: 'Simulate'
+  }
+});
+
+/**
+ * Main app component.
+ */
 export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
 
+    // Set initial states.
     this.state = {
       simulate: false
     };
   }
 
+  /**
+   * Handler for starting a simulation.
+   * @param {Object} e Mouse event.
+   */
   onSimulate(e) {
     e.preventDefault();
     this.setState({simulate: true});
@@ -29,8 +52,7 @@ export default class App extends React.Component {
             <div className="navbar-header">
               <a className="navbar-brand" href="/">
                 <FormattedMessage
-                  id="premier_league"
-                  defaultMessage="{season} English Premier League"
+                  {...messages.premierLeague}
                   values={{
                     season: '2011/12'
                   }}/>
@@ -50,14 +72,18 @@ export default class App extends React.Component {
             <button
               className="btn btn-success btn-simulate"
               type="button"
-              onClick={this.onSimulate.bind(this)}>Simulate!</button>
+              onClick={this.onSimulate.bind(this)}>
+                <FormattedMessage {...messages.simulate} />
+            </button>
           }
 
           <div className="video-overlay"></div>
           <VideoBG simulate={this.state.simulate} />
           <div className="container">
             {this.state.simulate &&
-              <LeagueTable collection={teams} simulate={this.state.simulate} />
+              <LeagueTable
+                collection={teams}
+                simulate={this.state.simulate} />
             }
           </div>
         </div>

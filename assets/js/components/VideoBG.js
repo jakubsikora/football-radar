@@ -1,7 +1,11 @@
 import React from 'react';
 
+/**
+ * Component for video background.
+ */
 export default class VideoBG extends React.Component {
   componentWillReceiveProps(nextProps) {
+    // Based on simulate props start the video.
     if (this.props.simulate !== nextProps.simulate) {
 
       const video = React.findDOMNode(this.refs.video);

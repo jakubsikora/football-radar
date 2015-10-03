@@ -1,5 +1,16 @@
 {
   "language.en": "EN",
   "language.PL": "PL",
-  "premier_league": "{season} Angielska Ekstraklasa"
+  "premier_league": "{season} Angielska Ekstraklasa",
+  "simulate": "Symuluj",
+  "header.pos": "Poz",
+  "header.name": "Nazwa",
+  "header.matches": "M",
+  "header.points": "Pkt",
+  "header.win": "Z",
+  "header.draw": "R",
+  "header.lose": "P",
+  "header.goalsFor": "GZ",
+  "header.goalsAgainst": "GS",
+  "header.goalsDifference": "GR"
 }

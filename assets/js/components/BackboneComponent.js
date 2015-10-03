@@ -5,9 +5,6 @@ import React from 'react';
 /**
  * Get backbone collection connected with the react component listen
  * for collection changes.
- * @constructor
- * @class BackboneComponent
- * @extends {React.Component}
  */
 export default class BackboneComponent extends React.Component {
   constructor(props, context) {
@@ -49,7 +46,7 @@ export default class BackboneComponent extends React.Component {
       const collection = this.props.collection;
 
       this.setState({
-        'collection': collection
+        collection: collection
       });
     }
   }

@@ -1,5 +1,16 @@
 {
   "language.en": "EN",
   "language.PL": "PL",
-  "premier_league": "{season} English Premier League"
+  "premier_league": "{season} English Premier League",
+  "simulate": "Simulate",
+  "header.pos": "Pos",
+  "header.name": "Name",
+  "header.matches": "M",
+  "header.points": "Pts",
+  "header.win": "W",
+  "header.draw": "D",
+  "header.lose": "L",
+  "header.goalsFor": "GF",
+  "header.goalsAgainst": "GA",
+  "header.goalsDifference": "GD"
 }

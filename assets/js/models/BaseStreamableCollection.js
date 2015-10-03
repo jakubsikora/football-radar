@@ -1,7 +1,11 @@
 import configModel from './ConfigModel.js';
 
+/**
+ * Base collection for streams.
+ */
 class BaseStreamableCollection extends Backbone.Collection {
   stream() {
+    // Get steam settings.
     const host = 'ws://' + configModel.get('WS_HOST') + ':' + configModel.get('WS_PORT') + '/';
     const channel = this.channel;
     let streaming = true;
@@ -19,6 +23,7 @@ class BaseStreamableCollection extends Backbone.Collection {
     if (!streaming) return;
 
     const that = this;
+    // Create instance of websocket and start streaming.
     const socket = new WebSocket(host + channel);
 
     socket.onopen = function() {

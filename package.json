@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node lib/server.js",
     "build-config": "node ./lib/config.js",
-    "build-dev": "npm run build-config && webpack -d",
+    "build-dev": "npm run build-config && webpack -d --watch",
     "build-production": "npm run build-config && webpack -p",
     "test": "karma start"
   },
@@ -44,7 +44,7 @@
     "phantomjs-polyfill": "0.0.1",
     "react": "^0.13.3",
     "react-bootstrap": "^0.25.2",
-    "react-intl": "^2.0.0-pr-1",
+    "react-intl": "^2.0.0-pr-2",
     "react-router": "^1.0.0-rc1",
     "style-loader": "^0.12.4",
     "underscore": "^1.8.3",

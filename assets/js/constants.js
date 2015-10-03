@@ -17,7 +17,8 @@ const constants = {
   CH_GAMES: 'games',
   CHAMPIONS_LEAGUE_POS: [1, 2, 3, 4],
   EUROPA_LEAGUE_POS: [5, 6],
-  RELEGATION_POS: [18, 19, 20]
+  RELEGATION_POS: [18, 19, 20],
+  DEFAULT_LOCALE: 'en-UK'
 };
 
 export default constants;

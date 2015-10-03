@@ -6,17 +6,21 @@ import configModel from '../models/ConfigModel.js';
 import App from './App';
 import I18n from './I18n';
 import I18nModel from '../models/I18nModel.js';
+import cc from '../constants';
 
-const DEFAULT_LOCALE = 'en-UK';
-
+/**
+ * Main app wrapped with IntlProvider component.
+ */
 export default class AppIntl extends I18n {
   constructor(props, context) {
     super(props, context);
 
+    // Initial state
     this.state = {
-      'ready': false
+      ready: false
     };
 
+    // Intialize the app config model and load the translation model.
     configModel.fetch().done(() => {
       this.loadI18n();
     });
@@ -27,19 +31,22 @@ export default class AppIntl extends I18n {
    */
   loadI18n() {
     // Initial load
-    I18nModel.set({'locale': DEFAULT_LOCALE}, { 'initial': true });
+    I18nModel.set({ locale: cc.DEFAULT_LOCALE }, { initial: true });
 
     I18nModel.fetch().done(() => {
-      this.setState({ 'ready': true });
+      this.setState({ ready: true });
+
+      // Update translation cache.
       I18nModel.updateCache();
     });
   }
 
   render() {
-    if (!this.state['ready']) {
+    if (!this.state.ready) {
       return null;
     }
 
+    // Get translation details and pass them to wrapper component.
     const messages = I18nModel.get('messages');
     const locale = I18nModel.get('locale');
 

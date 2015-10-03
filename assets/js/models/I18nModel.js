@@ -4,8 +4,7 @@ import Backbone from 'backbone';
 import _ from 'underscore';
 
 /**
- * @class I18nModel
- * @extends {Backbone.Model}
+ * I18n model. Used for holding all the translation messages.
  */
 class I18nModel extends Backbone.Model {
 
@@ -15,6 +14,7 @@ class I18nModel extends Backbone.Model {
   constructor(options) {
     super(options);
 
+    // Add listener for changing locales.
     this.on('change:locale', this.updateLanguage);
     this.cache = [];
   }
@@ -46,7 +46,6 @@ class I18nModel extends Backbone.Model {
    * @param {Object} model Current model.
    * @param {String} value New locale.
    * @param {Object} options Event options.
-   * @return {?undefined}
    */
   updateLanguage(model, value, options) {
     if (options['initial']) {
