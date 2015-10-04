@@ -7,7 +7,7 @@ Simulate Premier League 2011/12 (React + Backbone + Websockets)
 1. Clone the repo.
 2. Make sure you have node version min 0.12.5 installed.
 3. Inside the repo folder run `npm install`.
-4. Then to build and start the app `npm run build-production && npm start`.
+4. Then to build and start the app `npm run build-production && npm start` or `npm run build-dev && npm start`.
 5. By default app should be accessible via `http://localhost:3000`.
 
 ## Tests
