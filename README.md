@@ -14,7 +14,7 @@ Simulate Premier League 2011/12 (React + Backbone + Websockets)
 To run tests inside repo folder type `npm test`; 
 
 ## Custom ports
-By default app is using port `3000` for the web server and `8080` for websocket server. Also `localhost` as the app host. By specifing:
+By default app is using port `3000` for the web server and `8080` for websocket server. Also `localhost` as the app host. By running:
 
 1. `SERVER_PORT=xxxx WS_PORT=xxxx WS_HOST=xxxxxx npm build-production` 
 2. `SERVER_PORT=xxxx WS_PORT=xxxx WS_HOST=xxxxxx npm start` 
