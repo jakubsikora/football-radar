@@ -4,6 +4,9 @@
   "description": "Realtime league table (JS task)",
   "private": true,
   "main": "lib/server.js",
+  "engines" : {
+    "node" : ">=0.12.5"
+  },
   "scripts": {
     "start": "node lib/server.js",
     "build-config": "node ./lib/config.js",

@@ -23,6 +23,7 @@ module.exports = function (config) {
     },
     webpackServer: {
       noInfo: true
-    }
+    },
+    logLevel: config.LOG_ERROR
   });
 };
