@@ -4,7 +4,7 @@ import GameModel from '../../models/GameModel';
 
 let gameModel;
 
-describe('ConfigModel', () => {
+describe('GameModel', () => {
   beforeEach(() => {
     gameModel = new GameModel();
   });

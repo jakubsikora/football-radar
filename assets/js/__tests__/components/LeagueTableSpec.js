@@ -1,18 +1,17 @@
 'use strict';
 
 import React from 'react/addons';
-import LanguageChanger from '../../components/LanguageChanger';
+import LeagueTable from '../../components/LeagueTable';
 import {injectIntl} from 'react-intl';
-const i18nLanguageChanger = injectIntl(LanguageChanger);
+const i18nLeagueTable = injectIntl(LeagueTable);
 
 const TestUtils = React.addons.TestUtils;
 
-
-describe('LanguageChanger', () => {
+describe('LeagueTable ', () => {
   let component;
 
   beforeEach(() => {
-    component = TestUtils.renderIntoDocument(<i18nLanguageChanger />);
+    component = TestUtils.renderIntoDocument(<i18nLeagueTable />);
   });
 
   it('should render', () => {
